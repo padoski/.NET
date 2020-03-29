@@ -7,6 +7,36 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <TextBlock Margin="40 40 0 0" FontSize="15" Text="Imie"/>
+            <TextBlock Margin="40 40 0 0" FontSize="15" Text="Nazwisko"/>
+            <TextBlock Margin="40 40 0 0" FontSize="15" Text="Wiek"/>
+            <TextBlock Margin="40 40 0 0" FontSize="15" Text="Waga"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <local:TextBoxError x:Name="textBox" Margin="40 40 0 0"/>
+            <local:TextBoxError x:Name="textBox1" Margin="40 40 0 0"/>
+            <ComboBox Margin="40 40 0 0">
+                <ComboBoxItem>16</ComboBoxItem>
+            </ComboBox>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="0.2*"/>
+                </Grid.ColumnDefinitions>
+                <Slider Margin="40 40 0 0" Grid.Column="0" />
+                <TextBlock Margin="2 40 0 0" Text="55 kg" Grid.Column="1" />
+            </Grid>
+            <Button Width="60" Margin="10" x:Name="buttonOK" Content="Dodaj" Click="buttonOK_Click" />
+            <Button Width="60" Margin="10" Content="Usuń" />
+            <Button Width="60" Margin="10" Content="Modyfikuj" />
+        </StackPanel>
+        <ListBox Margin="10 10 10 10" Grid.Column="2"/>
+
     </Grid>
 </Window>

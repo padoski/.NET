@@ -22,7 +22,34 @@ namespace FootballersForm
     {
         public MainWindow()
         {
+            TextBoxError.BrushForAll = Brushes.Red;
             InitializeComponent();
+
+
+        }
+
+        private bool isNoEmpty(TextBoxError tb)
+        {
+            if (tb.Text.Trim() == "")
+            {
+                tb.SetError("Pole nie może być puste!");
+                return false;
+            }
+            tb.SetError("");
+            return true;
+        }
+
+
+        private void buttonOK_Click(object sender, RoutedEventArgs e)
+        {
+            //zwróć uwagę na różnicę między operatorem logicznym & - wyznacza obydwa operandy i liczy wynik
+            //a operatorem warunkowym && który w przypadku lewego operandu fałszywego nie wyznacza prawego perandu
+            //i wówczas nie zgłosi błędu w drugim polu!!!
+            if (isNoEmpty(textBox) & isNoEmpty(textBox1))
+            {
+                //tu poprawnie mamy wpisane dane
+            }
+
         }
     }
 }
