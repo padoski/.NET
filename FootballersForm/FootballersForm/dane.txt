@@ -1,1 +1,5 @@
-sss;Gładysz;19;50
+Paweł;Gładysz;24;64,2
+Robek;Lewandowski;30;68,1
+Diego;Maradona;44;78,9
+Leo;Messi;31;78,4
+Jakub;Błaszczykowski;15;50
