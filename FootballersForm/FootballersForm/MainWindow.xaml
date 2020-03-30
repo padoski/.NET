@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FootballersForm"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Footballers" Height="450" Width="800" Loaded="Window_Loaded" Closing="Window_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.5*"/>
@@ -19,24 +19,23 @@
             <TextBlock Margin="40 40 0 0" FontSize="15" Text="Waga"/>
         </StackPanel>
         <StackPanel Grid.Column="1">
-            <local:TextBoxError x:Name="textBox" Margin="40 40 0 0"/>
-            <local:TextBoxError x:Name="textBox1" Margin="40 40 0 0"/>
-            <ComboBox Margin="40 40 0 0">
-                <ComboBoxItem>16</ComboBoxItem>
-            </ComboBox>
+            <local:TextBoxError x:Name="tbName" Margin="40 40 0 0" />
+            <local:TextBoxError x:Name="tbSurname" Margin="40 40 0 0"/>
+            <ComboBox x:Name="cbAge" SelectedIndex="0" Margin="40 40 0 0"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="0.2*"/>
                 </Grid.ColumnDefinitions>
-                <Slider Margin="40 40 0 0" Grid.Column="0" />
-                <TextBlock Margin="2 40 0 0" Text="55 kg" Grid.Column="1" />
+                
+                <TextBlock x:Name="tbweight" Margin="0 40 0 0" Text="0 kg" Grid.Column="1" />
+                <Slider x:Name="slweight" Maximum="100" TickFrequency="0.1" IsSnapToTickEnabled="True" Value="50" Margin="35 40 0 0" Grid.Column="0" ValueChanged="slweight_ValueChanged" />
             </Grid>
             <Button Width="60" Margin="10" x:Name="buttonOK" Content="Dodaj" Click="buttonOK_Click" />
-            <Button Width="60" Margin="10" Content="Usuń" />
-            <Button Width="60" Margin="10" Content="Modyfikuj" />
+            <Button Width="60" Margin="10" Content="Usuń" Click="RemoveFootballer" />
+            <Button Width="60" Margin="10" Content="Modyfikuj" Click="ModifyFootballer" />
         </StackPanel>
-        <ListBox Margin="10 10 10 10" Grid.Column="2"/>
+        <ListBox x:Name="lb_LisOfPlayers" Margin="10 10 10 10" Grid.Column="2" SelectionChanged="IsSelect"  />
 
     </Grid>
 </Window>
